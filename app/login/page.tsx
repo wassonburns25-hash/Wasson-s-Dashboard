@@ -12,35 +12,60 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LayoutDashboard, Mail, Loader2 } from "lucide-react";
+import { LayoutDashboard, Loader2, KeyRound } from "lucide-react";
 import { toast } from "sonner";
 
 export default function LoginPage() {
+  const [step, setStep] = useState<"email" | "code">("email");
   const [email, setEmail] = useState("");
+  const [code, setCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function sendCode(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
     const supabase = createClient();
-    const siteUrl =
-      process.env.NEXT_PUBLIC_SITE_URL ||
-      (typeof window !== "undefined" ? window.location.origin : "");
 
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: `${siteUrl}/auth/callback` },
+      options: { shouldCreateUser: true },
     });
 
     setLoading(false);
     if (error) {
       toast.error(error.message);
     } else {
-      setSent(true);
-      toast.success("Magic link sent — check your inbox.");
+      setStep("code");
+      toast.success("Code sent — check your email.");
     }
+  }
+
+  async function verifyCode(e: React.FormEvent) {
+    e.preventDefault();
+    const token = code.trim();
+    if (token.length < 6) {
+      toast.error("Enter the 6-digit code");
+      return;
+    }
+    setLoading(true);
+    const supabase = createClient();
+
+    const { error } = await supabase.auth.verifyOtp({
+      email,
+      token,
+      type: "email",
+    });
+
+    if (error) {
+      setLoading(false);
+      toast.error(error.message);
+      return;
+    }
+    // Session cookies are now set client-side. Hard-navigate so middleware
+    // and server components pick up the authenticated session.
+    toast.success("Signed in!");
+    window.location.assign("/");
   }
 
   return (
@@ -52,29 +77,14 @@ export default function LoginPage() {
           </div>
           <CardTitle className="text-xl">Wasson&apos;s Dashboard</CardTitle>
           <CardDescription>
-            {sent
-              ? "Check your email for a sign-in link."
-              : "Sign in with a magic link — no password needed."}
+            {step === "email"
+              ? "Enter your email and we'll send you a sign-in code."
+              : `Enter the 6-digit code we sent to ${email}.`}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {sent ? (
-            <div className="flex flex-col items-center gap-3 py-4 text-center text-sm text-muted-foreground">
-              <Mail className="h-8 w-8 text-primary" />
-              <p>
-                We sent a link to <span className="font-medium">{email}</span>.
-                Click it to finish signing in.
-              </p>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setSent(false)}
-              >
-                Use a different email
-              </Button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+          {step === "email" ? (
+            <form onSubmit={sendCode} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -91,9 +101,59 @@ export default function LoginPage() {
                 {loading ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
                 ) : (
-                  "Send magic link"
+                  "Send code"
                 )}
               </Button>
+            </form>
+          ) : (
+            <form onSubmit={verifyCode} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="code">6-digit code</Label>
+                <Input
+                  id="code"
+                  type="text"
+                  inputMode="numeric"
+                  autoComplete="one-time-code"
+                  maxLength={6}
+                  placeholder="123456"
+                  className="text-center text-lg tracking-[0.5em]"
+                  value={code}
+                  onChange={(e) =>
+                    setCode(e.target.value.replace(/\D/g, "").slice(0, 6))
+                  }
+                  autoFocus
+                  required
+                />
+              </div>
+              <Button type="submit" className="w-full" disabled={loading}>
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <>
+                    <KeyRound className="h-4 w-4" /> Verify &amp; sign in
+                  </>
+                )}
+              </Button>
+              <div className="flex items-center justify-between text-xs">
+                <button
+                  type="button"
+                  className="text-muted-foreground hover:text-foreground"
+                  onClick={() => {
+                    setStep("email");
+                    setCode("");
+                  }}
+                >
+                  Use a different email
+                </button>
+                <button
+                  type="button"
+                  className="text-muted-foreground hover:text-foreground disabled:opacity-50"
+                  disabled={loading}
+                  onClick={() => sendCode(new Event("submit") as never)}
+                >
+                  Resend code
+                </button>
+              </div>
             </form>
           )}
         </CardContent>
