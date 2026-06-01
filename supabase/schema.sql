@@ -101,6 +101,17 @@ create table if not exists public.trips (
 );
 
 -- ---------------------------------------------------------------------------
+-- program_checks — daily check-offs for the training program calendar
+-- (item_key looks like "2026-05-25::LIFT")
+-- ---------------------------------------------------------------------------
+create table if not exists public.program_checks (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  item_key text not null,
+  created_at timestamptz not null default now(),
+  primary key (user_id, item_key)
+);
+
+-- ---------------------------------------------------------------------------
 -- Indexes for common lookups
 -- ---------------------------------------------------------------------------
 create index if not exists daily_logs_user_date_idx
@@ -125,6 +136,7 @@ alter table public.assignments enable row level security;
 alter table public.work_logs   enable row level security;
 alter table public.goals       enable row level security;
 alter table public.trips       enable row level security;
+alter table public.program_checks enable row level security;
 
 -- daily_logs
 create policy "daily_logs_select" on public.daily_logs
@@ -184,4 +196,12 @@ create policy "trips_insert" on public.trips
 create policy "trips_update" on public.trips
   for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
 create policy "trips_delete" on public.trips
+  for delete using (auth.uid() = user_id);
+
+-- program_checks
+create policy "program_checks_select" on public.program_checks
+  for select using (auth.uid() = user_id);
+create policy "program_checks_insert" on public.program_checks
+  for insert with check (auth.uid() = user_id);
+create policy "program_checks_delete" on public.program_checks
   for delete using (auth.uid() = user_id);

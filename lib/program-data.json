@@ -1,0 +1,835 @@
+{
+  "weeks": [
+    {
+      "days": [
+        {
+          "label": "SUNDAY May 24",
+          "date": "2026-05-24",
+          "sections": {
+            "LIFT": "Full Body (optional) + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nPress Archetype: Triple Bully (p.331) – 2 min/side\nArea 4 Ant. Shoulder/Chest: Ant. Compartment Mob Opt.2 (p.325) – 2 min/side",
+            "RUNNING": "Optional sprint day"
+          }
+        },
+        {
+          "label": "MONDAY May 25",
+          "date": "2026-05-25",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nOverhead Archetype: Overhead Rib Mob (p.301) – 2 min/arm\nArea 1 Jaw/Head/Neck: Posterior Neck Mob (p.290) – 2 min",
+            "RUNNING": "Long run: 2 mi"
+          }
+        },
+        {
+          "label": "TUESDAY May 26",
+          "date": "2026-05-26",
+          "sections": {
+            "LIFT": "Lower",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hips:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nSquat Archetype: Single-Leg Flexion w/ Ext. Rotation Opt.1 (p.370) – 2 min/leg\nArea 13 Calf: Calf Smash Opt.4 (p.427) – 2 min/calf",
+            "RUNNING": "CONDITIONING (Track/Agility):\n• 2x 60yd Shuttles — under 15 sec, rest 30 sec\n• 3x 1/2 Gassers — under 17 sec, rest 35 sec\n• 'Three' Cone Drills: B,D,G,K — 2x each"
+          }
+        },
+        {
+          "label": "WEDNESDAY May 27",
+          "date": "2026-05-27",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nJUMP ROPE + SPEED MOBILITY:\n• JUMP ROPE (stay on balls of feet):\n• Both feet 50x • L side-side 25x • R side-side 25x • Alt front-back 25x\n• Both side-side 25x • 1-foot 5L/5R x5 • Swing-through 25x ea • High-knee 50x\n• Double jumps 10x • Run-in-place fwd/back/side 50x\n• SPEED MOBILITY: line hops (F-B, S-S, up-up/back-back) 2-3x 30s on/off\n• High-knee skips 3x20-30y • Zigzag hops 2x ea • Bounding 3x20-30y\n• In-place sprint-outs 2x16 • LJ + lateral sprint 2x16 • Split-squat jumps 2x20\n• Directional running • 360 turns • In's & Out's (see Programs tab)",
+            "MOBILITY": "PICK – Shoulders:\n  Wall slides + band pull-aparts + plank taps + banded press (~6-8 min)\nHang Archetype: Barbell Shoulder Shear (p.327) – 2 min/shoulder\nArea 2 Upper Back: T-Spine Ball Smash Opt.1 (p.295) – 2 min",
+            "RUNNING": "OFF (no running)"
+          }
+        },
+        {
+          "label": "THURSDAY May 28",
+          "date": "2026-05-28",
+          "sections": {
+            "LIFT": "Upper",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nFront Rack Archetype: Super Front Rack (p.320) – 2 min/arm\nArea 6 Trunk: Targeted Gut Smash Opt.7 (p.362) – 2 min/side",
+            "RUNNING": "SPRINTS (Track/Agility):\n• 3 sets of (6) 50yd Sprints — 1 set <9 sec, 2 sets <8 sec\n• 'Three' Cone Drills: run 'C' 3x, run 'A' 5x"
+          }
+        },
+        {
+          "label": "FRIDAY May 29",
+          "date": "2026-05-29",
+          "sections": {
+            "LIFT": "Lower + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hip:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nPistol Archetype: Medial Heel Bone Smash (p.434) – 2 min/ankle\nArea 12 Shin: Lateral & Anterior Shin Mob (p.422) – 2 min/leg",
+            "RUNNING": "Long run: 2.5 mi"
+          }
+        },
+        {
+          "label": "SATURDAY May 30",
+          "date": "2026-05-30",
+          "sections": {
+            "LIFT": "Full Body (optional)",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nLunge Archetype: Trailing Leg Hip Extension (p.394) – 2 min/side\nArea 14 Ankle/Foot/Toes: Plantar Surface Smash (p.437) – 2 min/foot",
+            "RUNNING": "TIMED TRACK RUN (benchmark):\n1 Mile — target 7:15\nThen 15-20 min light jog + static stretch.\n(Optional sprint day otherwise)"
+          }
+        }
+      ]
+    },
+    {
+      "days": [
+        {
+          "label": "SUNDAY May 31",
+          "date": "2026-05-31",
+          "sections": {
+            "LIFT": "Full Body (optional) + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nPress Archetype: Serratus Smash (p.316) – 2 min/side\nArea 3 Post. Shoulder/Lat/Serratus: Shoulder Capsule Mob (p.310) – 2 min/shoulder",
+            "RUNNING": "Optional sprint day"
+          }
+        },
+        {
+          "label": "MONDAY Jun 1",
+          "date": "2026-06-01",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nOverhead Archetype: T-Spine Overhead Ext. Smash Opt.2 (p.298) – 2 min\nArea 5 Arm: Triceps Extension Smash (p.336) – 2 min/arm",
+            "RUNNING": "Long run: 3 mi"
+          }
+        },
+        {
+          "label": "TUESDAY Jun 2",
+          "date": "2026-06-02",
+          "sections": {
+            "LIFT": "Lower",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hips:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nSquat Archetype: Hip External Rotation w/ Flexion Opt.1 (p.373) – 2 min/leg\nArea 9 Adductors: Adductor Smash Opt.1 (p.398) – 2 min/leg",
+            "RUNNING": "CONDITIONING (Track/Agility):\n• 2x 300yd Shuttles — under 58 sec, rest 3 min b/w sets\n• 'Three' Cone Drills: E,F,H,J,L — 2x each"
+          }
+        },
+        {
+          "label": "WEDNESDAY Jun 3",
+          "date": "2026-06-03",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nJUMP ROPE + SPEED MOBILITY:\n• JUMP ROPE (stay on balls of feet):\n• Both feet 50x • L side-side 25x • R side-side 25x • Alt front-back 25x\n• Both side-side 25x • 1-foot 5L/5R x5 • Swing-through 25x ea • High-knee 50x\n• Double jumps 10x • Run-in-place fwd/back/side 50x\n• SPEED MOBILITY: line hops (F-B, S-S, up-up/back-back) 2-3x 30s on/off\n• High-knee skips 3x20-30y • Zigzag hops 2x ea • Bounding 3x20-30y\n• In-place sprint-outs 2x16 • LJ + lateral sprint 2x16 • Split-squat jumps 2x20\n• Directional running • 360 turns • In's & Out's (see Programs tab)",
+            "MOBILITY": "PICK – Shoulders:\n  Wall slides + band pull-aparts + plank taps + banded press (~6-8 min)\nHang Archetype: Shoulder Rotator Smash & Floss (p.312) – 2 min/shoulder\nArea 10 Hamstrings: Posterior Chain Smash & Floss Opt.2 (p.406) – 2 min/leg",
+            "RUNNING": "OFF (no running)"
+          }
+        },
+        {
+          "label": "THURSDAY Jun 4",
+          "date": "2026-06-04",
+          "sections": {
+            "LIFT": "Upper",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nFront Rack Archetype: Overhead Distraction w/ Ext. Rotation Bias (p.318) – 2 min/arm\nArea 11 Knee: Gap & Smash Opt.1&2 (p.415-416) – 2 min/side",
+            "RUNNING": "SPRINTS (Track/Agility):\n• 3 sets of (5) 100yd Sprints — 1 set <18 sec, 2 sets <17 sec\n• 'Three' Cone Drills: run 'C' 4x, run 'A' 6x"
+          }
+        },
+        {
+          "label": "FRIDAY Jun 5",
+          "date": "2026-06-05",
+          "sections": {
+            "LIFT": "Lower + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hip:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nPistol Archetype: Ankle VooDoo (p.436) – 1-2 min/ankle\nArea 7 Glutes/Hip Capsules: Side Hip Smash (p.370) – 2 min/side",
+            "RUNNING": "Long run: 3 mi"
+          }
+        },
+        {
+          "label": "SATURDAY Jun 6",
+          "date": "2026-06-06",
+          "sections": {
+            "LIFT": "Full Body (optional)",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nLunge Archetype: Hip Capsule Internal Rotation (p.381) – 2 min/side\nArea 8 Hip Flexors/Quads: Super Couch (p.393) – 2 min/side",
+            "RUNNING": "TIMED TRACK RUN (benchmark):\n1 Mile — target 7:05\nThen 15-20 min light jog + static stretch.\n(Optional sprint day otherwise)"
+          }
+        }
+      ]
+    },
+    {
+      "days": [
+        {
+          "label": "SUNDAY Jun 7",
+          "date": "2026-06-07",
+          "sections": {
+            "LIFT": "Full Body (optional) + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nPress Archetype: Triple Bully (p.331) – 2 min/side\nArea 4 Ant. Shoulder/Chest: Ant. Compartment Mob Opt.2 (p.325) – 2 min/side",
+            "RUNNING": "Optional sprint day"
+          }
+        },
+        {
+          "label": "MONDAY Jun 8",
+          "date": "2026-06-08",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nOverhead Archetype: Overhead Rib Mob (p.301) – 2 min/arm\nArea 1 Jaw/Head/Neck: Posterior Neck Mob (p.290) – 2 min",
+            "RUNNING": "Long run: 3.5 mi"
+          }
+        },
+        {
+          "label": "TUESDAY Jun 9",
+          "date": "2026-06-09",
+          "sections": {
+            "LIFT": "Lower",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hips:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nSquat Archetype: Single-Leg Flexion w/ Ext. Rotation Opt.1 (p.370) – 2 min/leg\nArea 13 Calf: Calf Smash Opt.4 (p.427) – 2 min/calf",
+            "RUNNING": "CONDITIONING (Track/Agility):\n• 3x 60yd Shuttles — under 15 sec, rest 30 sec\n• 4x 1/2 Gassers — under 17 sec, rest 35 sec\n• 'Three' Cone Drills: pick 6, run 2x each"
+          }
+        },
+        {
+          "label": "WEDNESDAY Jun 10",
+          "date": "2026-06-10",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nJUMP ROPE + SPEED MOBILITY:\n• JUMP ROPE (stay on balls of feet):\n• Both feet 50x • L side-side 25x • R side-side 25x • Alt front-back 25x\n• Both side-side 25x • 1-foot 5L/5R x5 • Swing-through 25x ea • High-knee 50x\n• Double jumps 10x • Run-in-place fwd/back/side 50x\n• SPEED MOBILITY: line hops (F-B, S-S, up-up/back-back) 2-3x 30s on/off\n• High-knee skips 3x20-30y • Zigzag hops 2x ea • Bounding 3x20-30y\n• In-place sprint-outs 2x16 • LJ + lateral sprint 2x16 • Split-squat jumps 2x20\n• Directional running • 360 turns • In's & Out's (see Programs tab)",
+            "MOBILITY": "PICK – Shoulders:\n  Wall slides + band pull-aparts + plank taps + banded press (~6-8 min)\nHang Archetype: Barbell Shoulder Shear (p.327) – 2 min/shoulder\nArea 2 Upper Back: T-Spine Ball Smash Opt.1 (p.295) – 2 min",
+            "RUNNING": "OFF (no running)"
+          }
+        },
+        {
+          "label": "THURSDAY Jun 11",
+          "date": "2026-06-11",
+          "sections": {
+            "LIFT": "Upper",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nFront Rack Archetype: Super Front Rack (p.320) – 2 min/arm\nArea 6 Trunk: Targeted Gut Smash Opt.7 (p.362) – 2 min/side",
+            "RUNNING": "SPRINTS (Track/Agility):\n• 3 sets of (6) 50yd Sprints — all sets <8 sec, rest 90 sec b/w sets\n• 'Three' Cone Drills: run 'A' 6x, pick 3 run 2x each"
+          }
+        },
+        {
+          "label": "FRIDAY Jun 12",
+          "date": "2026-06-12",
+          "sections": {
+            "LIFT": "Lower + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hip:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nPistol Archetype: Medial Heel Bone Smash (p.434) – 2 min/ankle\nArea 12 Shin: Lateral & Anterior Shin Mob (p.422) – 2 min/leg",
+            "RUNNING": "Long run: 3.5 mi"
+          }
+        },
+        {
+          "label": "SATURDAY Jun 13",
+          "date": "2026-06-13",
+          "sections": {
+            "LIFT": "Full Body (optional)",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nLunge Archetype: Trailing Leg Hip Extension (p.394) – 2 min/side\nArea 14 Ankle/Foot/Toes: Plantar Surface Smash (p.437) – 2 min/foot",
+            "RUNNING": "TIMED TRACK RUN (benchmark):\n1 Mile — target 7:00\nThen 15-20 min light jog + static stretch.\n(Optional sprint day otherwise)"
+          }
+        }
+      ]
+    },
+    {
+      "days": [
+        {
+          "label": "SUNDAY Jun 14",
+          "date": "2026-06-14",
+          "sections": {
+            "LIFT": "Full Body (optional) + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nPress Archetype: Serratus Smash (p.316) – 2 min/side\nArea 3 Post. Shoulder/Lat/Serratus: Shoulder Capsule Mob (p.310) – 2 min/shoulder",
+            "RUNNING": "Optional sprint day"
+          }
+        },
+        {
+          "label": "MONDAY Jun 15",
+          "date": "2026-06-15",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nOverhead Archetype: T-Spine Overhead Ext. Smash Opt.2 (p.298) – 2 min\nArea 5 Arm: Triceps Extension Smash (p.336) – 2 min/arm",
+            "RUNNING": "Long run: 4 mi"
+          }
+        },
+        {
+          "label": "TUESDAY Jun 16",
+          "date": "2026-06-16",
+          "sections": {
+            "LIFT": "Lower",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hips:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nSquat Archetype: Hip External Rotation w/ Flexion Opt.1 (p.373) – 2 min/leg\nArea 9 Adductors: Adductor Smash Opt.1 (p.398) – 2 min/leg",
+            "RUNNING": "CONDITIONING (Track/Agility):\n• 2x 300yd Shuttles — under 57 sec, rest 3 min b/w sets\n• 'Four' Cone Drills: A,B,C,D — 2x each"
+          }
+        },
+        {
+          "label": "WEDNESDAY Jun 17",
+          "date": "2026-06-17",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nJUMP ROPE + SPEED MOBILITY:\n• JUMP ROPE (stay on balls of feet):\n• Both feet 50x • L side-side 25x • R side-side 25x • Alt front-back 25x\n• Both side-side 25x • 1-foot 5L/5R x5 • Swing-through 25x ea • High-knee 50x\n• Double jumps 10x • Run-in-place fwd/back/side 50x\n• SPEED MOBILITY: line hops (F-B, S-S, up-up/back-back) 2-3x 30s on/off\n• High-knee skips 3x20-30y • Zigzag hops 2x ea • Bounding 3x20-30y\n• In-place sprint-outs 2x16 • LJ + lateral sprint 2x16 • Split-squat jumps 2x20\n• Directional running • 360 turns • In's & Out's (see Programs tab)",
+            "MOBILITY": "PICK – Shoulders:\n  Wall slides + band pull-aparts + plank taps + banded press (~6-8 min)\nHang Archetype: Shoulder Rotator Smash & Floss (p.312) – 2 min/shoulder\nArea 10 Hamstrings: Posterior Chain Smash & Floss Opt.2 (p.406) – 2 min/leg",
+            "RUNNING": "OFF (no running)"
+          }
+        },
+        {
+          "label": "THURSDAY Jun 18",
+          "date": "2026-06-18",
+          "sections": {
+            "LIFT": "Upper",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nFront Rack Archetype: Overhead Distraction w/ Ext. Rotation Bias (p.318) – 2 min/arm\nArea 11 Knee: Gap & Smash Opt.1&2 (p.415-416) – 2 min/side",
+            "RUNNING": "SPRINTS (Track/Agility):\n• 3 sets of (5) 100yd Sprints — 1 set <19 sec, 2 sets <17 sec\n• Rest 45 sec b/w sprints, 2 min b/w sets\n• 'Four' Cone Drills: E,F,G,H — 2x each"
+          }
+        },
+        {
+          "label": "FRIDAY Jun 19",
+          "date": "2026-06-19",
+          "sections": {
+            "LIFT": "Lower + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hip:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nPistol Archetype: Ankle VooDoo (p.436) – 1-2 min/ankle\nArea 7 Glutes/Hip Capsules: Side Hip Smash (p.370) – 2 min/side",
+            "RUNNING": "Long run: 4 mi"
+          }
+        },
+        {
+          "label": "SATURDAY Jun 20",
+          "date": "2026-06-20",
+          "sections": {
+            "LIFT": "Full Body (optional)",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nLunge Archetype: Hip Capsule Internal Rotation (p.381) – 2 min/side\nArea 8 Hip Flexors/Quads: Super Couch (p.393) – 2 min/side",
+            "RUNNING": "TIMED TRACK RUN (benchmark):\n1 Mile — target 6:50\nThen 15-20 min light jog + static stretch.\n(Optional sprint day otherwise)"
+          }
+        }
+      ]
+    },
+    {
+      "days": [
+        {
+          "label": "SUNDAY Jun 21",
+          "date": "2026-06-21",
+          "sections": {
+            "LIFT": "Full Body (optional) + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nPress Archetype: Triple Bully (p.331) – 2 min/side\nArea 4 Ant. Shoulder/Chest: Ant. Compartment Mob Opt.2 (p.325) – 2 min/side",
+            "RUNNING": "Optional sprint day"
+          }
+        },
+        {
+          "label": "MONDAY Jun 22",
+          "date": "2026-06-22",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nOverhead Archetype: Overhead Rib Mob (p.301) – 2 min/arm\nArea 1 Jaw/Head/Neck: Posterior Neck Mob (p.290) – 2 min",
+            "RUNNING": "Long run: 4.5 mi"
+          }
+        },
+        {
+          "label": "TUESDAY Jun 23",
+          "date": "2026-06-23",
+          "sections": {
+            "LIFT": "Lower",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hips:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nSquat Archetype: Single-Leg Flexion w/ Ext. Rotation Opt.1 (p.370) – 2 min/leg\nArea 13 Calf: Calf Smash Opt.4 (p.427) – 2 min/calf",
+            "RUNNING": "CONDITIONING (Track/Agility):\n• 4x 60yd Shuttles — under 14 sec, rest 30 sec\n• 4x 1/2 Gassers — under 17 sec, rest 35 sec\n• 'Four' Cone Drills: A,I,J,K,L — 2x each"
+          }
+        },
+        {
+          "label": "WEDNESDAY Jun 24",
+          "date": "2026-06-24",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nJUMP ROPE + SPEED MOBILITY:\n• JUMP ROPE (stay on balls of feet):\n• Both feet 50x • L side-side 25x • R side-side 25x • Alt front-back 25x\n• Both side-side 25x • 1-foot 5L/5R x5 • Swing-through 25x ea • High-knee 50x\n• Double jumps 10x • Run-in-place fwd/back/side 50x\n• SPEED MOBILITY: line hops (F-B, S-S, up-up/back-back) 2-3x 30s on/off\n• High-knee skips 3x20-30y • Zigzag hops 2x ea • Bounding 3x20-30y\n• In-place sprint-outs 2x16 • LJ + lateral sprint 2x16 • Split-squat jumps 2x20\n• Directional running • 360 turns • In's & Out's (see Programs tab)",
+            "MOBILITY": "PICK – Shoulders:\n  Wall slides + band pull-aparts + plank taps + banded press (~6-8 min)\nHang Archetype: Barbell Shoulder Shear (p.327) – 2 min/shoulder\nArea 2 Upper Back: T-Spine Ball Smash Opt.1 (p.295) – 2 min",
+            "RUNNING": "OFF (no running)"
+          }
+        },
+        {
+          "label": "THURSDAY Jun 25",
+          "date": "2026-06-25",
+          "sections": {
+            "LIFT": "Upper",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nFront Rack Archetype: Super Front Rack (p.320) – 2 min/arm\nArea 6 Trunk: Targeted Gut Smash Opt.7 (p.362) – 2 min/side",
+            "RUNNING": "SPRINTS (Track/Agility):\n• 3 sets of (8) 50yd Sprints — 1 set <9 sec, 2 sets <7 sec\n• Rest 90 sec b/w sets\n• 'Four' Cone Drills: B,D,E,F,K — 2x each"
+          }
+        },
+        {
+          "label": "FRIDAY Jun 26",
+          "date": "2026-06-26",
+          "sections": {
+            "LIFT": "Lower + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hip:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nPistol Archetype: Medial Heel Bone Smash (p.434) – 2 min/ankle\nArea 12 Shin: Lateral & Anterior Shin Mob (p.422) – 2 min/leg",
+            "RUNNING": "Long run: 5 mi  ⭐ GOAL"
+          }
+        },
+        {
+          "label": "SATURDAY Jun 27",
+          "date": "2026-06-27",
+          "sections": {
+            "LIFT": "Full Body (optional)",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nLunge Archetype: Trailing Leg Hip Extension (p.394) – 2 min/side\nArea 14 Ankle/Foot/Toes: Plantar Surface Smash (p.437) – 2 min/foot",
+            "RUNNING": "TIMED TRACK RUN (benchmark):\n1 Mile — target 6:35\nThen 15-20 min light jog + static stretch.\n(Optional sprint day otherwise)"
+          }
+        }
+      ]
+    },
+    {
+      "days": [
+        {
+          "label": "SUNDAY Jun 28",
+          "date": "2026-06-28",
+          "sections": {
+            "LIFT": "Full Body (optional) + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\nOptional: 50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Choice (personal weakness):\n  Pick your tightest area — run that day's routine (ankle/hip/shoulder).\nPress Archetype: Serratus Smash (p.316) – 2 min/side\nArea 3 Post. Shoulder/Lat/Serratus: Shoulder Capsule Mob (p.310) – 2 min/shoulder",
+            "RUNNING": "Optional sprint day"
+          }
+        },
+        {
+          "label": "MONDAY Jun 29",
+          "date": "2026-06-29",
+          "sections": {
+            "LIFT": "Upper + Core",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Ankle:\n  Knee-to-wall + heel drops + banded distraction (~6-8 min)\nOverhead Archetype: T-Spine Overhead Ext. Smash Opt.2 (p.298) – 2 min\nArea 5 Arm: Triceps Extension Smash (p.336) – 2 min/arm",
+            "RUNNING": "Long run"
+          }
+        },
+        {
+          "label": "TUESDAY Jun 30",
+          "date": "2026-06-30",
+          "sections": {
+            "LIFT": "Lower",
+            "FIELD": "WALL BALL routine (see Wall Ball tab)\n50 GBs, shooting, live reps",
+            "MOBILITY": "PICK – Hips:\n  90/90 + couch stretch + pigeon + Figure 4 (~8-10 min)\nSquat Archetype: Hip External Rotation w/ Flexion Opt.1 (p.373) – 2 min/leg\nArea 9 Adductors: Adductor Smash Opt.1 (p.398) – 2 min/leg",
+            "RUNNING": "CONDITIONING (Track/Agility):\n• 2x 300yd Shuttles — under 56 sec, rest 3 min b/w sets\n• 'Four' Cone Drills: pick 7, run 2x each"
+          }
+        },
+        {
+          "label": "",
+          "date": null,
+          "sections": {}
+        },
+        {
+          "label": "",
+          "date": null,
+          "sections": {}
+        },
+        {
+          "label": "",
+          "date": null,
+          "sections": {}
+        },
+        {
+          "label": "",
+          "date": null,
+          "sections": {}
+        }
+      ]
+    }
+  ],
+  "wallBall": [
+    {
+      "n": 1,
+      "exercise": "Form",
+      "reps": "50x"
+    },
+    {
+      "n": 2,
+      "exercise": "Strong Hand 1 Cradle",
+      "reps": "50x"
+    },
+    {
+      "n": 3,
+      "exercise": "Off Hand 1 Cradle",
+      "reps": "50x"
+    },
+    {
+      "n": 4,
+      "exercise": "Strong Hand No Cradle",
+      "reps": "50x"
+    },
+    {
+      "n": 5,
+      "exercise": "Off Hand No Cradle",
+      "reps": "50x"
+    },
+    {
+      "n": 6,
+      "exercise": "Catch & Split",
+      "reps": "50x each hand"
+    },
+    {
+      "n": 7,
+      "exercise": "Strong Hand Catch on Opposite Shoulder",
+      "reps": "50x"
+    },
+    {
+      "n": 8,
+      "exercise": "Off Hand Catch on Opposite Shoulder",
+      "reps": "50x"
+    },
+    {
+      "n": 9,
+      "exercise": "Roll After Catch",
+      "reps": "50x each hand"
+    },
+    {
+      "n": 10,
+      "exercise": "Strong Hand Quick Stick",
+      "reps": "50x"
+    },
+    {
+      "n": 11,
+      "exercise": "Off Hand Quick Stick",
+      "reps": "50x"
+    },
+    {
+      "n": 12,
+      "exercise": "Catch & Throw Opposite",
+      "reps": "25x each hand"
+    },
+    {
+      "n": 13,
+      "exercise": "1 Hand Throw Strong Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 14,
+      "exercise": "1 Hand Throw Off Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 15,
+      "exercise": "Face Dodge into Shovel Pass Strong Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 16,
+      "exercise": "Face Dodge into Shovel Pass Off Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 17,
+      "exercise": "Side Arm Strong Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 18,
+      "exercise": "Side Arm Off Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 19,
+      "exercise": "Strong Hand Twister",
+      "reps": "25x"
+    },
+    {
+      "n": 20,
+      "exercise": "Off Hand Twister",
+      "reps": "25x"
+    },
+    {
+      "n": 21,
+      "exercise": "Behind the Back Strong Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 22,
+      "exercise": "Behind the Back Off Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 23,
+      "exercise": "Lever Pass Strong Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 24,
+      "exercise": "Lever Pass Off Hand",
+      "reps": "25x"
+    },
+    {
+      "n": 25,
+      "exercise": "Freestyle",
+      "reps": "50x"
+    }
+  ],
+  "mobility": [
+    {
+      "group": "ANKLE    —    Used: Monday & Thursday",
+      "items": [
+        {
+          "name": "1. Knee-to-wall dorsiflexion",
+          "detail": "Toes ~4-5 in from wall, drive knee over toes keeping heel down. 10 reps/side, ease back to find your max distance. Track the distance over time."
+        },
+        {
+          "name": "2. Calf raise / heel drop on step",
+          "detail": "Balls of feet on a step, heels off edge. Rise up to strengthen, slowly drop heels below the step to stretch. 2-3 sets of 30 sec (or 10-15 reps)."
+        },
+        {
+          "name": "3. Soleus bent-knee heel drop",
+          "detail": "Same step position but with a soft knee bend to bias the soleus. 2-3 sets of 30 sec."
+        },
+        {
+          "name": "4. Banded ankle distraction (joint mob)",
+          "detail": "Anchor band low, loop around front of ankle, step out for tension. Drive knee forward over toes through the new range. 1-2 min/ankle."
+        },
+        {
+          "name": "5. Loaded heel drop (progression)",
+          "detail": "Hold a light DB/KB while lowering heels off the step for deeper, loaded dorsiflexion. 2-3 sets of 30 sec — only when warm."
+        }
+      ],
+      "source": "thereadystate.com/blogs/essential-exercises-ankle-mobility"
+    },
+    {
+      "group": "HIPS    —    Used: Tuesday  (also Fri 'Hip')",
+      "items": [
+        {
+          "name": "1. 90/90 hip switches",
+          "detail": "Seated, front + back leg both at 90°. Hold, then rotate floor-to-floor to train internal + external rotation. 1 min/side, several slow switches."
+        },
+        {
+          "name": "2. Couch stretch",
+          "detail": "Kneel with rear shin up a wall, front foot planted, squeeze glute and tall torso to open the hip flexor. 1-2 min/side. Add a band pull from the hip socket if available."
+        },
+        {
+          "name": "3. Pigeon",
+          "detail": "Front shin across, back leg long; keep chest tall and only load what's comfortable. 1-2 min/side for the glute / external rotators."
+        },
+        {
+          "name": "4. Figure-4 / seated piriformis",
+          "detail": "Ankle over opposite knee, gently press knee down (or pull shin in seated). 1 min/side."
+        },
+        {
+          "name": "5. Banded hip distraction (opener)",
+          "detail": "Band high around the hip crease, walk out for tension, sink into a deep lunge or squat to clear impingement. 1-2 min/side."
+        }
+      ],
+      "source": "thereadystate.com/blogs/hip-mobility-exercises + /effective-hip-opening-exercises"
+    },
+    {
+      "group": "SHOULDERS    —    Used: Wednesday",
+      "items": [
+        {
+          "name": "1. Wall slides / wall angels",
+          "detail": "Back, ribs and low back to the wall; arms at 90°, slide up like a snow angel keeping contact, then return. 2 sets of 10-12. Don't let the ribs flare."
+        },
+        {
+          "name": "2. Band pull-apart (T)",
+          "detail": "Band at shoulder height, arms straight, pull apart to a 'T'. Shoulders down, ribs tucked. 10-15 reps."
+        },
+        {
+          "name": "3. High plank shoulder taps",
+          "detail": "Plank, hands under shoulders; tap opposite shoulder without hips shifting. 20-30 sec, controlled."
+        },
+        {
+          "name": "4. Banded overhead press-out",
+          "detail": "Anchor band ~elbow height, press through full shoulder flexion for stability through range. 10-12 reps/side."
+        },
+        {
+          "name": "5. Sleeper stretch (internal rotation)",
+          "detail": "Side-lying, shoulder at 90°, gently press forearm down to mild stretch — for IR / posterior capsule. 20-30 sec/side, never to pain."
+        }
+      ],
+      "source": "thereadystate.com/blogs/shoulder-mobility-exercises"
+    },
+    {
+      "group": "CHOICE (PERSONAL WEAKNESS)    —    Used: Saturday & Sunday (optional)",
+      "items": [
+        {
+          "name": "1. Self-select",
+          "detail": "Choose the routine for whatever feels most restricted that day — ankle, hip, or shoulder. Aim for 6-10 min."
+        }
+      ],
+      "source": "Athlete's choice"
+    },
+    {
+      "group": "Times/holds are starting guidelines from the articles — scale to feel, never push into pain. Friday 'Hip' runs the same routine as Tuesday 'Hips'; Monday & Thursday both run the Ankle routine.",
+      "items": []
+    }
+  ],
+  "track": [
+    {
+      "a": "BUCKNELL MEN'S LACROSSE — TRACK / FIELD CONDITIONING / AGILITY PROGRAM",
+      "b": ""
+    },
+    {
+      "a": "Source: team summer program PDF (originally dated 2019; dates remapped to 2026 in the calendar).",
+      "b": ""
+    },
+    {
+      "a": "CONDITIONING DESCRIPTIONS (Tue/Thu)",
+      "b": ""
+    },
+    {
+      "a": "60 yard Shuttle",
+      "b": "Cones at 5, 10 & 15 yds from start. Run to cone 1 and back; cone 2 and back; cone 3 and finish through start."
+    },
+    {
+      "a": "300 yard Shuttle",
+      "b": "Cones at start and 25 yds. Run to the 25-yd cone and back; repeat 6 total times = one set."
+    },
+    {
+      "a": "1/2 Gasser",
+      "b": "Cones at start and 53 yds (width of football field). Run to the 53-yd cone and finish through the start = one 1/2 gasser."
+    },
+    {
+      "a": "50 yard Sprint",
+      "b": "Cones at start and 50 yds. Sprint through the 50, rest 20 sec, sprint back through start, rest 20 sec, repeat for reps. (e.g. 3 sets of 6, rest 90 sec b/w sets)."
+    },
+    {
+      "a": "100 yard Sprint",
+      "b": "Cones at start and 100 yds. Sprint through, rest 40 sec, sprint back, rest 40 sec, repeat for reps. (e.g. 3 sets of 6, rest 2 min b/w sets)."
+    },
+    {
+      "a": "Cone Drills",
+      "b": "All cones 10 yds apart (soda cans / bottles work). Restart between each drill and give 100% effort. ('Three/Four/Five/Six' = number of cones in the drill set.)"
+    },
+    {
+      "a": "SATURDAY TIMED TRACK RUN (benchmarks)",
+      "b": ""
+    },
+    {
+      "a": "How it works",
+      "b": "Run the timed distance to track speed-endurance. After the timed run: 15-20 min light jog, then static stretching. Log your actual time."
+    },
+    {
+      "a": "Date (2026)",
+      "b": "Distance — Target time   |   Your time: ______"
+    },
+    {
+      "a": "Sat 5/30",
+      "b": "1 Mile — 7:15        Your time: _____ min _____ sec"
+    },
+    {
+      "a": "Sat 6/6",
+      "b": "1 Mile — 7:05        Your time: _____ min _____ sec"
+    },
+    {
+      "a": "Sat 6/13",
+      "b": "1 Mile — 7:00        Your time: _____ min _____ sec"
+    },
+    {
+      "a": "Sat 6/20",
+      "b": "1 Mile — 6:50        Your time: _____ min _____ sec"
+    },
+    {
+      "a": "Sat 6/27",
+      "b": "1 Mile — 6:35        Your time: _____ min _____ sec"
+    },
+    {
+      "a": "(continues in PDF)",
+      "b": "Original program continues into July/Aug (1.5-mi runs, then faster miles down to ~5:50). Add later if you extend the calendar."
+    },
+    {
+      "a": "WEDNESDAY: JUMP ROPE PROGRAM",
+      "b": ""
+    },
+    {
+      "a": "Purpose & form",
+      "b": "Builds quick feet, foot speed, coordination, kinesthetic awareness. Never jump flat-footed — stay on the balls of your feet. Rope sized so ends reach your armpits when standing on the middle."
+    },
+    {
+      "a": "Foot patterns",
+      "b": "1. Both feet — 50x\n2. Left foot side-to-side — 25x\n3. Right foot side-to-side — 25x\n4. Both feet alternating front-to-back — 25x\n5. Both feet side-to-side — 25x\n6. One foot: 5 left, 5 right, repeat — 5x\n7. L foot / R foot, swing non-jumping foot through — 25x each\n8. High-knee run — 50x\n9. Double jumps — 10x\n10. Run in place moving fwd / back / side-to-side — 50x"
+    },
+    {
+      "a": "WEDNESDAY: SPEED MOBILITY EXERCISES",
+      "b": ""
+    },
+    {
+      "a": "Drills",
+      "b": "1. Front-back line hops — 2-3x (30s on/30s off)\n2. Side-side line hops — 2-3x (30s on/30s off)\n3. Up/up-back/back hops — 2-3x (30s on/30s off)\n4. High-knee skips — 3x 20-30 yds\n5. Diagonal hops double/single (zigzag) — 2x each 10-20 yds\n6. Alternate speed bounding (single) — 3x 20-30 yds\n7. High-knee in-place sprint-outs — 2x 16 reps\n8. Standing long jump w/ lateral sprint-out — 2x 16 reps\n9. Split-squat jumps — 2x 20 reps\n10. Forward/backward 5-yd sprints — 4x (30s on/30s off)"
+    },
+    {
+      "a": "Directional running",
+      "b": "Run straight 10 yds, sharp cut right keeping speed, then sharp left. Alternate cutting both directions for 30 yds."
+    },
+    {
+      "a": "360° turns",
+      "b": "Run straight; every 10 yds rotate a full 360°. Maintain for 40-60 yds."
+    },
+    {
+      "a": "In's & Out's",
+      "b": "Explode into a sprint for 10 yds, decelerate to 80% for 20 yds, explode again for 10 yds. Repeat twice."
+    },
+    {
+      "a": "MON / FRI: JUMP & SPEED PROGRAM (Speed, Flexibility, Vertical Power)",
+      "b": ""
+    },
+    {
+      "a": "Warm up",
+      "b": "Jog in place or jumping jacks 3-5 min. Stretch the whole body, especially calves, quads, hamstrings, lower back."
+    },
+    {
+      "a": "Leap Ups",
+      "b": "Bend to a 1/4 squat, jump 8-10 inches off the ground."
+    },
+    {
+      "a": "Calf Raises",
+      "b": "One leg at a time, ball of foot on edge of a step. Both legs = one set."
+    },
+    {
+      "a": "Step Ups",
+      "b": "Foot on plyo box/chair parallel to ground. Push off hard, switch legs in the air, land with opposite leg on box. Both legs = one rep."
+    },
+    {
+      "a": "Thrust Ups",
+      "b": "Start legs straight, bounce as high as you can; on landing, use arms to throw yourself back up."
+    },
+    {
+      "a": "Burn Outs",
+      "b": "Rise onto toes as high as possible, return heels, explode back up keeping toes in contact. Repeat for reps."
+    },
+    {
+      "a": "12-Week Progression",
+      "b": "Wk: LeapUps(set x rep) | CalfRaise | StepUp | ThrustUp | BurnOut(reps)"
+    },
+    {
+      "a": "Week 1",
+      "b": "2x25 | 2x10 | 2x10 | 2x15 | 1x100"
+    },
+    {
+      "a": "Week 2",
+      "b": "1x50 | 2x20 | 2x20 | 2x20 | 1x200"
+    },
+    {
+      "a": "Week 3",
+      "b": "1x60 | 2x25 | 2x25 | 2x25 | 1x300"
+    },
+    {
+      "a": "Week 4",
+      "b": "1x60 | 2x30 | 1x30 | 2x30 | 1x350"
+    },
+    {
+      "a": "Week 5",
+      "b": "2x40 | 1x35 | 1x30 | 1x35 | 1x375"
+    },
+    {
+      "a": "Week 6",
+      "b": "1x70 | 1x40 | 1x30 | 1x40 | 1x400"
+    },
+    {
+      "a": "Week 7",
+      "b": "1x80 | 1x45 | 1x40 | 1x50 | 1x500"
+    },
+    {
+      "a": "Week 8",
+      "b": "2x50 | 1x50 | 1x30 | 1x55 | 1x350"
+    },
+    {
+      "a": "Week 9",
+      "b": "1x75 | 1x55 | 1x35 | 1x60 | 1x375"
+    },
+    {
+      "a": "Week 10",
+      "b": "1x80 | 1x60 | 1x35 | 1x45 | 1x400"
+    },
+    {
+      "a": "Week 11",
+      "b": "1x85 | 1x65 | 1x35 | 1x50 | 1x425"
+    },
+    {
+      "a": "Week 12",
+      "b": "1x90 | 1x70 | 1x40 | 1x60 | 1x450"
+    }
+  ]
+}

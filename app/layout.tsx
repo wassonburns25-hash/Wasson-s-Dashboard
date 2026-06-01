@@ -9,12 +9,24 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Wasson's Dashboard",
   description: "Personal life dashboard — training, academics, goals, finance.",
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "Wasson's",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0b",
+  maximumScale: 1,
+  themeColor: "#0a0a0c",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
