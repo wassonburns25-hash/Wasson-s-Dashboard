@@ -45,7 +45,7 @@ export default function LoginPage() {
     e.preventDefault();
     const token = code.trim();
     if (token.length < 6) {
-      toast.error("Enter the 6-digit code");
+      toast.error("Enter the full code from your email");
       return;
     }
     setLoading(true);
@@ -79,7 +79,7 @@ export default function LoginPage() {
           <CardDescription>
             {step === "email"
               ? "Enter your email and we'll send you a sign-in code."
-              : `Enter the 6-digit code we sent to ${email}.`}
+              : `Enter the code we sent to ${email}.`}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -108,18 +108,18 @@ export default function LoginPage() {
           ) : (
             <form onSubmit={verifyCode} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="code">6-digit code</Label>
+                <Label htmlFor="code">Verification code</Label>
                 <Input
                   id="code"
                   type="text"
                   inputMode="numeric"
                   autoComplete="one-time-code"
-                  maxLength={6}
-                  placeholder="123456"
-                  className="text-center text-lg tracking-[0.5em]"
+                  maxLength={10}
+                  placeholder="Enter code"
+                  className="text-center text-lg tracking-[0.3em]"
                   value={code}
                   onChange={(e) =>
-                    setCode(e.target.value.replace(/\D/g, "").slice(0, 6))
+                    setCode(e.target.value.replace(/\D/g, "").slice(0, 10))
                   }
                   autoFocus
                   required
