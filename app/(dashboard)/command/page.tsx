@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/page-header";
 import { Priorities, type Priority } from "./priorities";
 import { TodayTraining } from "../today-training";
+import { StatCard } from "@/components/stat-card";
 import {
   Card,
   CardContent,
@@ -12,13 +13,17 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Assignment } from "@/lib/types";
-import { formatDate, todayISO } from "@/lib/utils";
+import { formatCurrency, formatDate, startOfWeek, todayISO } from "@/lib/utils";
+import { GOAL_WEIGHT_LB } from "@/lib/nutrition";
 import {
   Target,
   CalendarClock,
   Mail,
   GraduationCap,
   Lock,
+  Wallet,
+  Users,
+  Dumbbell,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -33,11 +38,17 @@ function greeting() {
 export default async function CommandPage() {
   const supabase = createClient();
   const today = todayISO();
+  const weekStart = startOfWeek(new Date()).toISOString().slice(0, 10);
 
   const [
     { data: prioritiesData },
     { data: programChecks },
     { data: assignmentsData },
+    { count: openAssignments },
+    { data: weekDaily },
+    { data: weekWork },
+    { data: contactsData },
+    { data: latestWeight },
   ] = await Promise.all([
     supabase
       .from("priorities")
@@ -51,11 +62,32 @@ export default async function CommandPage() {
       .neq("status", "done")
       .order("due_date", { ascending: true })
       .limit(5),
+    supabase
+      .from("assignments")
+      .select("id", { count: "exact", head: true })
+      .neq("status", "done"),
+    supabase.from("daily_logs").select("earnings").gte("log_date", weekStart),
+    supabase.from("work_logs").select("earnings").gte("work_date", weekStart),
+    supabase.from("contacts").select("status"),
+    supabase
+      .from("weights")
+      .select("weight_lb")
+      .order("weigh_date", { ascending: false })
+      .limit(1),
   ]);
 
   const priorities = (prioritiesData ?? []) as Priority[];
   const todayChecks = (programChecks ?? []).map((r) => r.item_key as string);
   const assignments = (assignmentsData ?? []) as Assignment[];
+
+  const weekEarnings =
+    (weekDaily ?? []).reduce((s, r) => s + Number((r as { earnings: number }).earnings || 0), 0) +
+    (weekWork ?? []).reduce((s, r) => s + Number((r as { earnings: number }).earnings || 0), 0);
+  const contacts = (contactsData ?? []) as { status: string }[];
+  const reached = contacts.filter((c) => c.status !== "to_contact").length;
+  const currentWeight = latestWeight?.[0]
+    ? Number((latestWeight[0] as { weight_lb: number }).weight_lb)
+    : null;
 
   const dateLabel = new Date().toLocaleDateString("en-US", {
     weekday: "long",
@@ -66,6 +98,33 @@ export default async function CommandPage() {
   return (
     <div>
       <PageHeader title={`${greeting()}, Wasson`} description={dateLabel} />
+
+      <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <StatCard
+          label="Money — this week"
+          value={formatCurrency(weekEarnings)}
+          icon={Wallet}
+          hint="earned"
+        />
+        <StatCard
+          label="Job — outreach"
+          value={`${reached}/${contacts.length}`}
+          icon={Users}
+          hint="contacts reached"
+        />
+        <StatCard
+          label="School — open"
+          value={String(openAssignments ?? 0)}
+          icon={GraduationCap}
+          hint="assignments to do"
+        />
+        <StatCard
+          label="Fitness — weight"
+          value={currentWeight ? `${currentWeight} lb` : "—"}
+          icon={Dumbbell}
+          hint={`Goal ${GOAL_WEIGHT_LB} lb`}
+        />
+      </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <Card>

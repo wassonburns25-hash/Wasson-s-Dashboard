@@ -101,3 +101,19 @@ export async function deleteMeal(id: string) {
   revalidatePath("/nutrition");
   revalidatePath("/");
 }
+
+export async function logWeight(input: { weigh_date: string; weight_lb: number }) {
+  const { supabase, user } = await requireUser();
+  if (!input.weight_lb || input.weight_lb <= 0) throw new Error("Enter your weight");
+  const { error } = await supabase.from("weights").upsert(
+    {
+      user_id: user.id,
+      weigh_date: input.weigh_date,
+      weight_lb: input.weight_lb,
+    },
+    { onConflict: "user_id,weigh_date" }
+  );
+  if (error) throw new Error(error.message);
+  revalidatePath("/nutrition");
+  revalidatePath("/command");
+}

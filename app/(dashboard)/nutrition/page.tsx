@@ -2,9 +2,11 @@ import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/page-header";
 import { StatCard } from "@/components/stat-card";
 import { MealForm } from "./meal-form";
+import { WeightForm } from "./weight-form";
+import { WeightChart } from "@/components/charts/weight-chart";
 import { DeleteButton } from "@/components/delete-button";
 import { deleteMeal } from "./actions";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { todayISO } from "@/lib/utils";
 import {
@@ -31,13 +33,34 @@ export default async function NutritionPage() {
   const supabase = createClient();
   const today = todayISO();
 
-  const { data } = await supabase
-    .from("meals")
-    .select("*")
-    .eq("eaten_on", today)
-    .order("created_at", { ascending: true });
+  const [{ data }, { data: weightData }] = await Promise.all([
+    supabase
+      .from("meals")
+      .select("*")
+      .eq("eaten_on", today)
+      .order("created_at", { ascending: true }),
+    supabase
+      .from("weights")
+      .select("weigh_date, weight_lb")
+      .order("weigh_date", { ascending: true })
+      .limit(60),
+  ]);
 
   const meals = (data ?? []) as Meal[];
+  const weights = (weightData ?? []) as { weigh_date: string; weight_lb: number }[];
+  const weightChart = weights.map((w) => ({
+    label: new Date(w.weigh_date + "T00:00:00").toLocaleDateString("en-US", {
+      month: "numeric",
+      day: "numeric",
+    }),
+    weight: Number(w.weight_lb),
+  }));
+  const currentWeight = weights.length
+    ? Number(weights[weights.length - 1].weight_lb)
+    : CURRENT_WEIGHT_LB;
+  const lost = Math.max(0, CURRENT_WEIGHT_LB - currentWeight);
+  const toLose = CURRENT_WEIGHT_LB - GOAL_WEIGHT_LB;
+  const weightPct = Math.min(100, Math.round((lost / toLose) * 100));
   const totals = meals.reduce(
     (a, m) => ({
       cal: a.cal + m.calories,
@@ -96,6 +119,23 @@ export default async function NutritionPage() {
             <span>Carbs {totals.c}g</span>
             <span>Fat {totals.f}g</span>
           </div>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader className="flex-row items-center justify-between space-y-0">
+          <div>
+            <CardTitle>Bodyweight</CardTitle>
+            <CardDescription>
+              {currentWeight} lb now · {Math.max(0, currentWeight - GOAL_WEIGHT_LB)} lb to
+              go ({weightPct}% there)
+            </CardDescription>
+          </div>
+          <WeightForm defaultWeight={currentWeight} />
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <Progress value={weightPct} />
+          <WeightChart data={weightChart} goal={GOAL_WEIGHT_LB} />
         </CardContent>
       </Card>
 

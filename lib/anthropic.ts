@@ -11,7 +11,9 @@ export function getAnthropic(): Anthropic | null {
   return new Anthropic({ apiKey });
 }
 
-export const AI_MODEL = "claude-opus-4-8";
+// Haiku: fast and low-cost for calorie estimates, photo extraction, and
+// outreach drafts. Bump to "claude-opus-4-8" if you want max quality.
+export const AI_MODEL = "claude-haiku-4-5";
 
 /** Pull the first text block out of a Messages response. */
 export function firstText(content: Anthropic.ContentBlock[]): string {

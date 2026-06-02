@@ -296,3 +296,19 @@ create table if not exists public.outreach_profile (
 alter table public.outreach_profile enable row level security;
 create policy "outreach_profile_all" on public.outreach_profile
   for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ===========================================================================
+-- weights — daily bodyweight log (one row per user per day)
+-- ===========================================================================
+create table if not exists public.weights (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  weigh_date date not null default current_date,
+  weight_lb numeric(5, 1) not null,
+  created_at timestamptz not null default now(),
+  unique (user_id, weigh_date)
+);
+create index if not exists weights_user_date_idx on public.weights (user_id, weigh_date);
+alter table public.weights enable row level security;
+create policy "weights_all" on public.weights
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
