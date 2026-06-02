@@ -205,3 +205,46 @@ create policy "program_checks_insert" on public.program_checks
   for insert with check (auth.uid() = user_id);
 create policy "program_checks_delete" on public.program_checks
   for delete using (auth.uid() = user_id);
+
+-- ===========================================================================
+-- meals — nutrition log with AI-estimated macros
+-- ===========================================================================
+create table if not exists public.meals (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  eaten_on date not null default current_date,
+  description text not null,
+  calories int not null default 0,
+  protein_g int not null default 0,
+  carbs_g int not null default 0,
+  fat_g int not null default 0,
+  created_at timestamptz not null default now()
+);
+create index if not exists meals_user_date_idx on public.meals (user_id, eaten_on desc);
+
+alter table public.meals enable row level security;
+create policy "meals_select" on public.meals for select using (auth.uid() = user_id);
+create policy "meals_insert" on public.meals for insert with check (auth.uid() = user_id);
+create policy "meals_update" on public.meals for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+create policy "meals_delete" on public.meals for delete using (auth.uid() = user_id);
+
+-- ===========================================================================
+-- books — reading list
+-- ===========================================================================
+create table if not exists public.books (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  title text not null,
+  author text,
+  status text not null default 'to_read'
+    check (status in ('to_read', 'reading', 'read')),
+  notes text,
+  created_at timestamptz not null default now()
+);
+create index if not exists books_user_idx on public.books (user_id);
+
+alter table public.books enable row level security;
+create policy "books_select" on public.books for select using (auth.uid() = user_id);
+create policy "books_insert" on public.books for insert with check (auth.uid() = user_id);
+create policy "books_update" on public.books for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+create policy "books_delete" on public.books for delete using (auth.uid() = user_id);

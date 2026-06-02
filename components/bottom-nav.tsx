@@ -10,7 +10,7 @@ export function BottomNav() {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-40 border-t bg-card/95 pb-safe backdrop-blur md:hidden">
-      <div className="grid grid-cols-7">
+      <div className="flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {navItems.map((item) => {
           const active =
             item.href === "/"
@@ -22,7 +22,7 @@ export function BottomNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex flex-col items-center gap-0.5 py-2 text-[9px] font-medium transition-colors",
+                "flex min-w-[3.4rem] flex-1 flex-col items-center gap-0.5 py-2 text-[9px] font-medium transition-colors",
                 active ? "text-primary" : "text-muted-foreground"
               )}
             >

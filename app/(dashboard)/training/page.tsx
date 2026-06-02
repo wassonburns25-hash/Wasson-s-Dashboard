@@ -18,6 +18,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { VolumeLineChart } from "@/components/charts/line-chart";
 import { WorkoutForm } from "./workout-form";
+import { PhotoImport } from "./photo-import";
 import { DeleteButton } from "@/components/delete-button";
 import { deleteWorkout } from "./actions";
 import type { Workout } from "@/lib/types";
@@ -29,7 +30,7 @@ export const dynamic = "force-dynamic";
 const trainingGoals = [
   { label: "Bench press 225 lb", current: 0, target: 225, unit: "lb", key: "bench" },
   { label: "1.5 mi run under 9:00", current: 0, target: 100, unit: "%", key: "run" },
-  { label: "Bodyweight target 185 lb", current: 0, target: 185, unit: "lb", key: "bw" },
+  { label: "Bodyweight 230 → 210 lb", current: 0, target: 210, unit: "lb", key: "bw" },
 ];
 
 function computeWeeklyVolume(workouts: Workout[]) {
@@ -73,14 +74,28 @@ export default async function TrainingPage() {
       />
 
       <div className="grid gap-6 lg:grid-cols-3">
-        <Card className="lg:col-span-1">
-          <CardHeader>
-            <CardTitle>Log a workout</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <WorkoutForm />
-          </CardContent>
-        </Card>
+        <div className="space-y-6 lg:col-span-1">
+          <Card>
+            <CardHeader>
+              <CardTitle>Log a workout</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <WorkoutForm />
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Import from photo</CardTitle>
+              <CardDescription>
+                Snap your journal or Bridge Athletic screen.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <PhotoImport />
+            </CardContent>
+          </Card>
+        </div>
 
         <div className="space-y-6 lg:col-span-2">
           <Card>

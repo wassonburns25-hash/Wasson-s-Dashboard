@@ -78,3 +78,34 @@ export async function deleteWorkLog(id: string) {
   revalidatePath("/academics");
   revalidatePath("/finance");
 }
+
+export type BookStatus = "to_read" | "reading" | "read";
+
+export async function addBook(input: {
+  title: string;
+  author: string | null;
+}) {
+  const { supabase, user } = await requireUser();
+  const { error } = await supabase.from("books").insert({
+    user_id: user.id,
+    title: input.title,
+    author: input.author,
+    status: "to_read",
+  });
+  if (error) throw new Error(error.message);
+  revalidatePath("/academics");
+}
+
+export async function updateBookStatus(id: string, status: BookStatus) {
+  const { supabase } = await requireUser();
+  const { error } = await supabase.from("books").update({ status }).eq("id", id);
+  if (error) throw new Error(error.message);
+  revalidatePath("/academics");
+}
+
+export async function deleteBook(id: string) {
+  const { supabase } = await requireUser();
+  const { error } = await supabase.from("books").delete().eq("id", id);
+  if (error) throw new Error(error.message);
+  revalidatePath("/academics");
+}

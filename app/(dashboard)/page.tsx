@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/page-header";
 import { StatCard } from "@/components/stat-card";
 import { DailyForm } from "./daily-form";
+import { TodayTraining } from "./today-training";
 import {
   Card,
   CardContent,
@@ -10,7 +11,8 @@ import {
 } from "@/components/ui/card";
 import type { DailyLog } from "@/lib/types";
 import { formatCurrency, startOfWeek, todayISO } from "@/lib/utils";
-import { CalendarDays, Wallet, Flame, CheckCircle2 } from "lucide-react";
+import { CALORIE_TARGET } from "@/lib/nutrition";
+import { CalendarDays, Wallet, Flame, CheckCircle2, Utensils } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -19,16 +21,28 @@ export default async function OverviewPage() {
   const today = todayISO();
   const weekStart = startOfWeek(new Date()).toISOString().slice(0, 10);
 
-  const [{ data: todayLog }, { data: weekLogs }] = await Promise.all([
+  const [
+    { data: todayLog },
+    { data: weekLogs },
+    { data: programChecks },
+    { data: todayMeals },
+  ] = await Promise.all([
     supabase.from("daily_logs").select("*").eq("log_date", today).maybeSingle(),
     supabase
       .from("daily_logs")
       .select("*")
       .gte("log_date", weekStart)
       .order("log_date", { ascending: true }),
+    supabase.from("program_checks").select("item_key").like("item_key", `${today}::%`),
+    supabase.from("meals").select("calories").eq("eaten_on", today),
   ]);
 
   const logs = (weekLogs ?? []) as DailyLog[];
+  const todayChecks = (programChecks ?? []).map((r) => r.item_key as string);
+  const caloriesToday = (todayMeals ?? []).reduce(
+    (s, m) => s + Number((m as { calories: number }).calories || 0),
+    0
+  );
   const weekEarnings = logs.reduce((sum, l) => sum + Number(l.earnings || 0), 0);
   const daysLogged = logs.length;
   const tasksDone = todayLog
@@ -64,11 +78,21 @@ export default async function OverviewPage() {
           hint="lifted · nutrition · schoolwork"
         />
         <StatCard
+          label="Calories today"
+          value={caloriesToday.toLocaleString()}
+          icon={Utensils}
+          hint={`Target ${CALORIE_TARGET.toLocaleString()} kcal`}
+        />
+        <StatCard
           label="Energy today"
           value={todayLog?.energy ? `${todayLog.energy} / 5` : "—"}
           icon={Flame}
           hint={todayLog?.mood ? `Mood ${todayLog.mood}/5` : "Not logged yet"}
         />
+      </div>
+
+      <div className="mt-6">
+        <TodayTraining today={today} initialChecks={todayChecks} />
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">

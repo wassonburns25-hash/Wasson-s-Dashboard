@@ -20,6 +20,7 @@ import { IncomeBarChart } from "@/components/charts/bar-chart";
 import { AssignmentForm } from "./assignment-form";
 import { WorkLogForm } from "./worklog-form";
 import { AssignmentStatusSelect } from "./assignment-status-select";
+import { ReadingList, type Book } from "./reading-list";
 import { DeleteButton } from "@/components/delete-button";
 import { deleteAssignment, deleteWorkLog } from "./actions";
 import type { Assignment, WorkLog } from "@/lib/types";
@@ -51,20 +52,26 @@ function computeMonthlyEarnings(logs: WorkLog[]) {
 export default async function AcademicsPage() {
   const supabase = createClient();
 
-  const [{ data: assignmentsData }, { data: workLogsData }] = await Promise.all([
-    supabase
-      .from("assignments")
-      .select("*")
-      .order("due_date", { ascending: true }),
-    supabase
-      .from("work_logs")
-      .select("*")
-      .order("work_date", { ascending: false })
-      .limit(200),
-  ]);
+  const [{ data: assignmentsData }, { data: workLogsData }, { data: booksData }] =
+    await Promise.all([
+      supabase
+        .from("assignments")
+        .select("*")
+        .order("due_date", { ascending: true }),
+      supabase
+        .from("work_logs")
+        .select("*")
+        .order("work_date", { ascending: false })
+        .limit(200),
+      supabase
+        .from("books")
+        .select("*")
+        .order("created_at", { ascending: false }),
+    ]);
 
   const assignments = (assignmentsData ?? []) as Assignment[];
   const workLogs = (workLogsData ?? []) as WorkLog[];
+  const books = (booksData ?? []) as Book[];
   const monthly = computeMonthlyEarnings(workLogs);
   const totalEarned = workLogs.reduce((s, l) => s + Number(l.earnings), 0);
 
@@ -218,6 +225,16 @@ export default async function AcademicsPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Reading list</CardTitle>
+          <CardDescription>Books you&apos;d like to read.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ReadingList books={books} />
+        </CardContent>
+      </Card>
     </div>
   );
 }
