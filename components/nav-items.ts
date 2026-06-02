@@ -9,6 +9,7 @@ import {
   Target,
   Plane,
   Wallet,
+  Tags,
   type LucideIcon,
 } from "lucide-react";
 
@@ -29,4 +30,5 @@ export const navItems: NavItem[] = [
   { href: "/goals", label: "Goals", icon: Target },
   { href: "/trips", label: "Trips", icon: Plane },
   { href: "/finance", label: "Finance", icon: Wallet },
+  { href: "/resale", label: "Flipfolio", icon: Tags },
 ];

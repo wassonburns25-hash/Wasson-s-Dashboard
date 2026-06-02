@@ -21,8 +21,18 @@ bottom nav on mobile.
   displayed as cards grouped by category.
 - **Trips** — add trips (destination, dates, purpose, notes) shown as a timeline
   sorted by date, split into upcoming and past.
-- **Finance** — combined income from the work log and manual daily entries, with
-  weekly/monthly/all-time totals and a weekly income bar chart.
+- **Finance** — combined income from the work log, manual daily entries, and
+  Flipfolio sales, with weekly/monthly/all-time totals and a weekly income bar
+  chart.
+- **Flipfolio** (resale marketplace) — photograph an item you want to sell
+  (old sneakers, lacrosse gear, clothes) and Claude vision identifies it,
+  recommends the best trusted marketplace (eBay, StockX, GOAT, Grailed,
+  SidelineSwap, Depop, Poshmark, Facebook Marketplace), and estimates a
+  realistic resale price range. Track listings from draft → for-sale → sold,
+  find local in-person selling spots by city/ZIP, and route a configurable
+  slice of every sale into an **investment fund** that tracks net invested,
+  current value, and gain/loss. Photos are stored in Supabase Storage; sales
+  flow through to the Finance page.
 
 ## Tech stack
 
@@ -48,8 +58,10 @@ npm install
 1. Create a project at [supabase.com](https://supabase.com).
 2. Open the **SQL Editor** and run the contents of
    [`supabase/schema.sql`](supabase/schema.sql). This creates all tables
-   (`daily_logs`, `workouts`, `assignments`, `work_logs`, `goals`, `trips`)
-   with Row Level Security so each user only sees their own data.
+   (`daily_logs`, `workouts`, `assignments`, `work_logs`, `goals`, `trips`,
+   plus Flipfolio's `listings`, `fund_contributions`, `fund_settings` and a
+   public `listings` storage bucket) with Row Level Security so each user only
+   sees their own data.
 3. Under **Authentication → Providers**, make sure **Email** is enabled.
    Magic links are on by default.
 
@@ -104,6 +116,7 @@ app/
     goals/              # grouped goal cards (CRUD)
     trips/              # timeline
     finance/            # combined income + weekly chart
+    resale/             # Flipfolio: AI photo analysis, listings, fund
     actions.ts          # daily_logs server actions
   auth/                 # magic-link callback + signout routes
   login/                # magic-link sign-in

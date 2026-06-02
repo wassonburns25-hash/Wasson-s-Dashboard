@@ -74,3 +74,53 @@ export type Trip = {
   notes: string | null;
   created_at: string;
 };
+
+// --- Flipfolio: resale marketplace -----------------------------------------
+
+export type ListingCategory = "sneakers" | "lacrosse" | "clothing" | "other";
+export type ListingCondition = "new" | "like_new" | "good" | "fair" | "worn";
+export type ListingStatus = "draft" | "listed" | "sold" | "archived";
+
+export type Listing = {
+  id: string;
+  user_id: string;
+  title: string;
+  category: ListingCategory;
+  brand: string | null;
+  item_size: string | null;
+  condition: ListingCondition;
+  photo_url: string | null;
+  recommended_marketplace: string | null;
+  price_low: number;
+  price_high: number;
+  asking_price: number | null;
+  ai_summary: string | null;
+  status: ListingStatus;
+  sold_price: number | null;
+  sold_marketplace: string | null;
+  sold_on: string | null;
+  notes: string | null;
+  created_at: string;
+};
+
+export type FundContributionKind = "contribution" | "withdrawal";
+
+export type FundContribution = {
+  id: string;
+  user_id: string;
+  amount: number;
+  kind: FundContributionKind;
+  source: "sale" | "manual";
+  listing_id: string | null;
+  note: string | null;
+  occurred_on: string;
+  created_at: string;
+};
+
+export type FundSettings = {
+  user_id: string;
+  fund_name: string;
+  current_value: number;
+  allocation_pct: number;
+  updated_at: string;
+};

@@ -296,3 +296,101 @@ create table if not exists public.outreach_profile (
 alter table public.outreach_profile enable row level security;
 create policy "outreach_profile_all" on public.outreach_profile
   for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ===========================================================================
+-- Flipfolio — resale marketplace
+-- listings: items you're selling (sneakers, lacrosse gear, clothes, …) with
+-- AI-suggested marketplace + price range, plus sale tracking.
+-- ===========================================================================
+create table if not exists public.listings (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  title text not null,
+  category text not null default 'clothing'
+    check (category in ('sneakers', 'lacrosse', 'clothing', 'other')),
+  brand text,
+  item_size text,
+  condition text not null default 'good'
+    check (condition in ('new', 'like_new', 'good', 'fair', 'worn')),
+  photo_url text,
+  recommended_marketplace text,
+  price_low numeric(10, 2) not null default 0,
+  price_high numeric(10, 2) not null default 0,
+  asking_price numeric(10, 2),
+  ai_summary text,
+  status text not null default 'draft'
+    check (status in ('draft', 'listed', 'sold', 'archived')),
+  sold_price numeric(10, 2),
+  sold_marketplace text,
+  sold_on date,
+  notes text,
+  created_at timestamptz not null default now()
+);
+create index if not exists listings_user_idx
+  on public.listings (user_id, created_at desc);
+
+alter table public.listings enable row level security;
+create policy "listings_all" on public.listings
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ---------------------------------------------------------------------------
+-- fund_contributions — money moved into (or out of) the investment fund.
+-- Often funded straight from a sale (source = 'sale', listing_id set).
+-- ---------------------------------------------------------------------------
+create table if not exists public.fund_contributions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  amount numeric(10, 2) not null,
+  kind text not null default 'contribution'
+    check (kind in ('contribution', 'withdrawal')),
+  source text not null default 'manual'
+    check (source in ('sale', 'manual')),
+  listing_id uuid references public.listings (id) on delete set null,
+  note text,
+  occurred_on date not null default current_date,
+  created_at timestamptz not null default now()
+);
+create index if not exists fund_contributions_user_idx
+  on public.fund_contributions (user_id, occurred_on desc);
+
+alter table public.fund_contributions enable row level security;
+create policy "fund_contributions_all" on public.fund_contributions
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ---------------------------------------------------------------------------
+-- fund_settings — one row per user: fund name, manually-tracked current value,
+-- and the default % of each sale to route into the fund.
+-- ---------------------------------------------------------------------------
+create table if not exists public.fund_settings (
+  user_id uuid primary key references auth.users (id) on delete cascade,
+  fund_name text not null default 'Investment Fund',
+  current_value numeric(12, 2) not null default 0,
+  allocation_pct int not null default 100
+    check (allocation_pct between 0 and 100),
+  updated_at timestamptz not null default now()
+);
+alter table public.fund_settings enable row level security;
+create policy "fund_settings_all" on public.fund_settings
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ---------------------------------------------------------------------------
+-- Storage bucket for listing photos. Public bucket: images render directly
+-- from their public URL (no SELECT policy needed — adding one would let clients
+-- list every filename). Each user may only write/delete in their own folder.
+-- ---------------------------------------------------------------------------
+insert into storage.buckets (id, name, public)
+  values ('listings', 'listings', true)
+  on conflict (id) do nothing;
+
+create policy "listings_photos_insert" on storage.objects
+  for insert to authenticated
+  with check (
+    bucket_id = 'listings'
+    and (storage.foldername(name))[1] = auth.uid()::text
+  );
+create policy "listings_photos_delete" on storage.objects
+  for delete to authenticated
+  using (
+    bucket_id = 'listings'
+    and (storage.foldername(name))[1] = auth.uid()::text
+  );

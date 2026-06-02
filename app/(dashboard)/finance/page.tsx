@@ -19,7 +19,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { IncomeBarChart } from "@/components/charts/bar-chart";
 import { ManualEntry } from "./manual-entry";
-import type { DailyLog, WorkLog } from "@/lib/types";
+import type { DailyLog, WorkLog, Listing } from "@/lib/types";
 import {
   formatCurrency,
   formatDate,
@@ -33,27 +33,34 @@ export const dynamic = "force-dynamic";
 type Entry = {
   date: string;
   amount: number;
-  source: "Work" | "Manual";
+  source: "Work" | "Manual" | "Resale";
   note: string | null;
 };
 
 export default async function FinancePage() {
   const supabase = createClient();
 
-  const [{ data: workLogsData }, { data: dailyData }] = await Promise.all([
-    supabase
-      .from("work_logs")
-      .select("*")
-      .order("work_date", { ascending: false }),
-    supabase
-      .from("daily_logs")
-      .select("*")
-      .gt("earnings", 0)
-      .order("log_date", { ascending: false }),
-  ]);
+  const [{ data: workLogsData }, { data: dailyData }, { data: soldData }] =
+    await Promise.all([
+      supabase
+        .from("work_logs")
+        .select("*")
+        .order("work_date", { ascending: false }),
+      supabase
+        .from("daily_logs")
+        .select("*")
+        .gt("earnings", 0)
+        .order("log_date", { ascending: false }),
+      supabase
+        .from("listings")
+        .select("*")
+        .eq("status", "sold")
+        .order("sold_on", { ascending: false }),
+    ]);
 
   const workLogs = (workLogsData ?? []) as WorkLog[];
   const dailyLogs = (dailyData ?? []) as DailyLog[];
+  const soldListings = (soldData ?? []) as Listing[];
 
   const entries: Entry[] = [
     ...workLogs.map((l) => ({
@@ -68,6 +75,14 @@ export default async function FinancePage() {
       source: "Manual" as const,
       note: null,
     })),
+    ...soldListings
+      .filter((l) => l.sold_price && l.sold_on)
+      .map((l) => ({
+        date: l.sold_on as string,
+        amount: Number(l.sold_price),
+        source: "Resale" as const,
+        note: l.sold_marketplace ? `${l.title} · ${l.sold_marketplace}` : l.title,
+      })),
   ].sort((a, b) => (a.date < b.date ? 1 : -1));
 
   // Weekly totals for the chart (last 8 weeks with data).
@@ -105,7 +120,7 @@ export default async function FinancePage() {
     <div>
       <PageHeader
         title="Finance"
-        description="Income from your work log and manual entries."
+        description="Income from your work log, manual entries, and Flipfolio sales."
       />
 
       <div className="grid gap-4 sm:grid-cols-3">
