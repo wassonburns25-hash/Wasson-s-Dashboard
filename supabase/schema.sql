@@ -312,3 +312,17 @@ create index if not exists weights_user_date_idx on public.weights (user_id, wei
 alter table public.weights enable row level security;
 create policy "weights_all" on public.weights
   for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ===========================================================================
+-- money_accounts — balances for the Money dashboard (one row per account key)
+-- ===========================================================================
+create table if not exists public.money_accounts (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  key text not null,
+  balance numeric(12, 2) not null default 0,
+  updated_at timestamptz not null default now(),
+  primary key (user_id, key)
+);
+alter table public.money_accounts enable row level security;
+create policy "money_accounts_all" on public.money_accounts
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
