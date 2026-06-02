@@ -248,3 +248,51 @@ create policy "books_select" on public.books for select using (auth.uid() = user
 create policy "books_insert" on public.books for insert with check (auth.uid() = user_id);
 create policy "books_update" on public.books for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
 create policy "books_delete" on public.books for delete using (auth.uid() = user_id);
+
+-- ===========================================================================
+-- priorities — top priorities for the command center
+-- ===========================================================================
+create table if not exists public.priorities (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  title text not null,
+  done boolean not null default false,
+  position int not null default 0,
+  created_at timestamptz not null default now()
+);
+create index if not exists priorities_user_idx on public.priorities (user_id, position);
+alter table public.priorities enable row level security;
+create policy "priorities_all" on public.priorities
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ===========================================================================
+-- contacts — networking / outreach tracker
+-- ===========================================================================
+create table if not exists public.contacts (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  name text not null,
+  company text,
+  role text,
+  link text,
+  status text not null default 'to_contact'
+    check (status in ('to_contact', 'contacted', 'responded', 'meeting')),
+  notes text,
+  created_at timestamptz not null default now()
+);
+create index if not exists contacts_user_idx on public.contacts (user_id);
+alter table public.contacts enable row level security;
+create policy "contacts_all" on public.contacts
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+-- ===========================================================================
+-- outreach_profile — single-row-per-user background for AI outreach drafts
+-- ===========================================================================
+create table if not exists public.outreach_profile (
+  user_id uuid primary key references auth.users (id) on delete cascade,
+  background text,
+  updated_at timestamptz not null default now()
+);
+alter table public.outreach_profile enable row level security;
+create policy "outreach_profile_all" on public.outreach_profile
+  for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
