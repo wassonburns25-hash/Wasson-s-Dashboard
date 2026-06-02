@@ -9,7 +9,6 @@ import {
   Target,
   Plane,
   Wallet,
-  PiggyBank,
   type LucideIcon,
 } from "lucide-react";
 
@@ -29,6 +28,5 @@ export const navItems: NavItem[] = [
   { href: "/network", label: "Network", icon: Users },
   { href: "/goals", label: "Goals", icon: Target },
   { href: "/trips", label: "Trips", icon: Plane },
-  { href: "/finance", label: "Finance", icon: Wallet },
-  { href: "/money", label: "Money", icon: PiggyBank },
+  { href: "/finance", label: "Finances", icon: Wallet },
 ];

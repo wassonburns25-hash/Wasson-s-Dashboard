@@ -20,5 +20,5 @@ export async function saveAccountBalance(key: string, balance: number) {
     { onConflict: "user_id,key" }
   );
   if (error) throw new Error(error.message);
-  revalidatePath("/money");
+  revalidatePath("/finance");
 }

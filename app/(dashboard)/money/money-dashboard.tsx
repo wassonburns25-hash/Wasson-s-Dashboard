@@ -143,12 +143,11 @@ export function MoneyDashboard({ initial }: { initial: Record<string, number> })
   return (
     <div
       style={{
-        minHeight: "100vh",
         background: "#0A0E1A",
         fontFamily: "'DM Mono', 'Courier New', monospace",
         color: "#E8EAF0",
         padding: "0",
-        margin: "-1.5rem",
+        border: "1px solid #1E2A40",
         borderRadius: 16,
         overflow: "hidden",
       }}

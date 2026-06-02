@@ -17,8 +17,10 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IncomeBarChart } from "@/components/charts/bar-chart";
 import { ManualEntry } from "./manual-entry";
+import { MoneyDashboard } from "../money/money-dashboard";
 import type { DailyLog, WorkLog } from "@/lib/types";
 import {
   formatCurrency,
@@ -40,20 +42,29 @@ type Entry = {
 export default async function FinancePage() {
   const supabase = createClient();
 
-  const [{ data: workLogsData }, { data: dailyData }] = await Promise.all([
-    supabase
-      .from("work_logs")
-      .select("*")
-      .order("work_date", { ascending: false }),
-    supabase
-      .from("daily_logs")
-      .select("*")
-      .gt("earnings", 0)
-      .order("log_date", { ascending: false }),
-  ]);
+  const [{ data: workLogsData }, { data: dailyData }, { data: accountsData }] =
+    await Promise.all([
+      supabase
+        .from("work_logs")
+        .select("*")
+        .order("work_date", { ascending: false }),
+      supabase
+        .from("daily_logs")
+        .select("*")
+        .gt("earnings", 0)
+        .order("log_date", { ascending: false }),
+      supabase.from("money_accounts").select("key, balance"),
+    ]);
 
   const workLogs = (workLogsData ?? []) as WorkLog[];
   const dailyLogs = (dailyData ?? []) as DailyLog[];
+
+  const initialBalances: Record<string, number> = {};
+  for (const row of accountsData ?? []) {
+    initialBalances[(row as { key: string }).key] = Number(
+      (row as { balance: number }).balance
+    );
+  }
 
   const entries: Entry[] = [
     ...workLogs.map((l) => ({
@@ -104,10 +115,21 @@ export default async function FinancePage() {
   return (
     <div>
       <PageHeader
-        title="Finance"
-        description="Income from your work log and manual entries."
+        title="Finances"
+        description="Net worth and accounts, plus income from work and earnings."
       />
 
+      <Tabs defaultValue="money">
+        <TabsList className="mb-6">
+          <TabsTrigger value="money">Money</TabsTrigger>
+          <TabsTrigger value="income">Income</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="money">
+          <MoneyDashboard initial={initialBalances} />
+        </TabsContent>
+
+        <TabsContent value="income">
       <div className="grid gap-4 sm:grid-cols-3">
         <StatCard label="This week" value={formatCurrency(weekTotal)} icon={Wallet} />
         <StatCard
@@ -190,6 +212,8 @@ export default async function FinancePage() {
           )}
         </CardContent>
       </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
